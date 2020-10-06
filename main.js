@@ -29,7 +29,7 @@ let populateBreedList = () => {
         document.getElementById("breed-list").innerHTML = dropdown_list;
       }
     })
-    .catch(error => console.log("Oops! There has been an error."));
+    .catch(error => console.log(error));
 };
 
 let getBreedPics = () => {
@@ -44,12 +44,24 @@ let getBreedPics = () => {
     .then(data => {
       let arr = data.message;
       console.log(arr);
+      let images_array = [];
+      // Grab 6 random images from the OG array
       for (let i = 0; i < 6; i++) {
         shuffleArray(arr);
-        console.log(arr[i]);
+        images_array.push(arr[i]);
       }
+      let output = "";
+      const gallery = document.getElementById("gallery");
+      console.log(gallery);
+      // map over the array and add each array item to the output
+      images_array.map(url => {
+        output += `<div class="card mb-4 box-shadow">
+      <div class="card-body"><img src=${url} class="img fluid" alt="a very cute dog"/></div></div>`;
+      });
+      console.log(output);
+      gallery.innerHTML = output;
     })
-    .catch(error => console.log("Oops! There has been an error."));
+    .catch(error => console.log(error));
 };
 
 // EVENT LISTENER
