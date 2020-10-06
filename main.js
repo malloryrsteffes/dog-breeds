@@ -3,8 +3,6 @@ const populate = document.querySelector("#populate");
 const breed_list_selector = document.querySelector("#breed-list");
 const Breeds_URL = "https://dog.ceo/api/breeds/list/all";
 
-let breeds = [];
-
 // Initial Fetch Request
 
 let populateBreedList = () => {
@@ -55,8 +53,8 @@ let getBreedPics = () => {
       const gallery = document.getElementById("gallery");
       // map over the array and add each array item to the output
       selected_images.map(url => {
-        output += `<div class="col-md-3"><div class="card mx-2 mb-4 box-shadow">
-      <div class="card-body"><img src=${url} class="img-fluid" alt="A very cute ${breed}"/></div></div></div>`;
+        output += `<div class="col-md-3">
+      <img src=${url} class="img-fluid" alt="A very cute ${breed}"/></div>`;
       });
       // Add the entire output to the awaiting container
       gallery.innerHTML = output;
