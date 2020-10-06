@@ -44,21 +44,21 @@ let getBreedPics = () => {
     .then(data => {
       let arr = data.message;
       console.log(arr);
-      let images_array = [];
-      // Grab 6 random images from the OG array
-      for (let i = 0; i < 6; i++) {
+      let selected_images = [];
+      // Grab 8 random images from the OG array
+      for (let i = 0; i < 8; i++) {
         shuffleArray(arr);
-        images_array.push(arr[i]);
+        selected_images.push(arr[i]);
       }
+      // Set up the gallery
       let output = "";
       const gallery = document.getElementById("gallery");
-      console.log(gallery);
       // map over the array and add each array item to the output
-      images_array.map(url => {
-        output += `<div class="card mb-4 box-shadow">
-      <div class="card-body"><img src=${url} class="img fluid" alt="a very cute dog"/></div></div>`;
+      selected_images.map(url => {
+        output += `<div class="col-md-3"><div class="card mx-2 mb-4 box-shadow">
+      <div class="card-body"><img src=${url} class="img-fluid" alt="A very cute ${breed}"/></div></div></div>`;
       });
-      console.log(output);
+      // Add the entire output to the awaiting container
       gallery.innerHTML = output;
     })
     .catch(error => console.log(error));

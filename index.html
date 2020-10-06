@@ -16,6 +16,7 @@
       integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg=="
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!--[if lt IE 7]>
@@ -28,8 +29,6 @@
       <div class="row">
         <div class="col-sm-12">
           <h1>Puppy Picture Picker</h1>
-        </div>
-        <div class="col-sm-12">
           <!-- Select Dropdown -->
           <p class="lead">
             Select a breed and press populate for pics of pups!
@@ -47,10 +46,8 @@
       </div>
     </div>
     <!-- Picture Gallery -->
-    <div id="gallery" class="container">
-      <div class="col-sm-12">
-        Gallery Here
-      </div>
+    <div class="container text-center">
+      <div id="gallery" class="row"></div>
     </div>
 
     <script
