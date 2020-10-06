@@ -5,12 +5,9 @@ const Breeds_URL = "https://dog.ceo/api/breeds/list/all";
 
 let breeds = [];
 
-// EVENT LISTENER
-window.addEventListener("load", populateBreeds);
-populate.addEventListener("click", getBreedPic);
 // Initial Fetch Request
 
-function populateBreeds() {
+let populateBreedList = () => {
   fetch(Breeds_URL)
     .then(response => {
       if (!response.ok) {
@@ -33,18 +30,34 @@ function populateBreeds() {
       }
     })
     .catch(error => console.log("Oops! There has been an error."));
-}
+};
 
-function getBreedPic() {
+let getBreedPics = () => {
   //Grab the breed from the selected option (to lower case, else throws error)
   let breed = breed_list_selector.options[
     breed_list_selector.selectedIndex
   ].value.toLowerCase();
-  // Build the URL dynamically
+  // Build the URL dynamically. The response is an array of image URLs.
   let images_URL = `https://dog.ceo/api/breed/${breed}/images`;
   fetch(images_URL)
     .then(res => res.json())
     .then(data => {
-      console.log(data.message);
-    });
+      let arr = data.message;
+      console.log(arr);
+      for (let i = 0; i < 6; i++) {
+        shuffleArray(arr);
+        console.log(arr[i]);
+      }
+    })
+    .catch(error => console.log("Oops! There has been an error."));
+};
+
+// EVENT LISTENER
+window.addEventListener("load", populateBreedList);
+populate.addEventListener("click", getBreedPics);
+
+// HELPERS
+
+function shuffleArray(arr) {
+  arr.sort(() => Math.random() - 0.5);
 }
