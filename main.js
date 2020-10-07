@@ -3,7 +3,7 @@ const populate = document.querySelector("#populate");
 const breed_list_selector = document.querySelector("#breed-list");
 const Breeds_URL = "https://dog.ceo/api/breeds/list/all";
 
-// Initial Fetch Request
+// Fetch Request
 
 let populateBreedList = () => {
   fetch(Breeds_URL)
@@ -31,7 +31,7 @@ let populateBreedList = () => {
 };
 
 let getBreedPics = () => {
-  //Grab the breed from the selected option (to lower case, else throws error)
+  // Grab the breed from the selected option (to lower case, else throws error)
   let breed = breed_list_selector.options[
     breed_list_selector.selectedIndex
   ].value.toLowerCase();
@@ -42,6 +42,7 @@ let getBreedPics = () => {
     .then(data => {
       let arr = data.message;
       let selected_images = [];
+      // Ensures we don't get empty image tags
       if (arr.length < 8) {
         for (let k = 0; k < arr.length; k++) {
           shuffleArray(arr);
@@ -58,7 +59,7 @@ let getBreedPics = () => {
       // Set up the gallery
       let output = "";
       const gallery = document.getElementById("gallery");
-      // map over the array and add each array item to the output
+      // Map over the array and add each array item to the output
       selected_images.map(url => {
         output += `<div class="col-6 col-sm-3">
       <img src=${url} class="img-fluid" alt="A very cute ${breed}"/></div>`;

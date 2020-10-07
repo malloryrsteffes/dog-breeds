@@ -3,6 +3,7 @@ body {
   background-repeat: repeat;
   background-size: contain;
   font-family: "Karla", sans-serif;
+  overflow-x: hidden;
 }
 
 h1 {
