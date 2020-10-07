@@ -60,7 +60,7 @@ let getBreedPics = () => {
       const gallery = document.getElementById("gallery");
       // map over the array and add each array item to the output
       selected_images.map(url => {
-        output += `<div class="col-md-3">
+        output += `<div class="col-6 col-sm-3">
       <img src=${url} class="img-fluid" alt="A very cute ${breed}"/></div>`;
       });
       // Add the entire output to the awaiting container
