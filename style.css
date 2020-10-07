@@ -2,6 +2,11 @@ body {
   background: url("images/dog_and_cat_pattern-05.jpg");
   background-repeat: repeat;
   background-size: contain;
+  font-family: "Karla", sans-serif;
+}
+
+h1 {
+  font-family: "Rubik", sans-serif;
 }
 .container {
   background: white;
@@ -25,7 +30,6 @@ body {
   margin: 0 auto;
   border-radius: 3px;
   overflow: hidden;
-  background: #fafafa url("img/icon-select.png") no-repeat 90% 50%;
 }
 
 .select-container select {
