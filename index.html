@@ -10,9 +10,13 @@
     <title>Puppy Picture Picker</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="https://kit.fontawesome.com/4d0ebe2c83.js"
+      crossorigin="anonymous"
+    ></script>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg=="
       crossorigin="anonymous"
     />
@@ -25,7 +29,7 @@
         <a href="#">upgrade your browser</a> to improve your experience.
       </p>
     <![endif]-->
-    <div class="container text-center ">
+    <div class="container text-center my-2">
       <div class="row">
         <div class="col-sm-12">
           <h1 class="mt-2">Puppy Picture Picker</h1>
@@ -36,7 +40,9 @@
           <div class="form">
             <div class="form-group">
               <label for="breed-select" class="sr-only">Select a breed!</label>
-              <select class="form-control" id="breed-list"> </select>
+              <div class="select-container">
+                <select class="form-control" id="breed-list"> </select>
+              </div>
             </div>
             <button type="submit" class="btn btn-success mb-4" id="populate">
               Populate!
@@ -47,19 +53,8 @@
 
       <!-- Picture Gallery -->
 
-      <div id="gallery" class="row"></div>
+      <div id="gallery" class="row text-center"></div>
     </div>
-
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"
-      integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ=="
-      crossorigin="anonymous"
-    ></script>
     <script src="main.js" async defer></script>
   </body>
 </html>

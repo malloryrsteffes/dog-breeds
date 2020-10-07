@@ -41,12 +41,19 @@ let getBreedPics = () => {
     .then(res => res.json())
     .then(data => {
       let arr = data.message;
-      console.log(arr);
       let selected_images = [];
-      // Grab 8 random images from the OG array
-      for (let i = 0; i < 8; i++) {
-        shuffleArray(arr);
-        selected_images.push(arr[i]);
+      if (arr.length < 8) {
+        for (let k = 0; k < arr.length; k++) {
+          shuffleArray(arr);
+          selected_images.push(arr[k]);
+          console.log("Darn - not many pictures of this breed!");
+        }
+      } else {
+        // Grab 8 random images from the OG array
+        for (let i = 0; i < 8; i++) {
+          shuffleArray(arr);
+          selected_images.push(arr[i]);
+        }
       }
       // Set up the gallery
       let output = "";
